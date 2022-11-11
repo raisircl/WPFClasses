@@ -30,6 +30,6 @@
         <CheckBox Content="Playing" x:Name="chkPlaying" Grid.Row="2" Grid.Column="0" Margin="5"/>
         <CheckBox Content="Studying" x:Name="chkStudying" Grid.Row="2" Grid.Column="1" Margin="5"/>
         <Button x:Name="btnCheck" Content="Check" Grid.Row="2" Grid.Column="2" Click="btnCheck_Click" Margin="5"/>
-
+        
     </Grid>
 </Window>
