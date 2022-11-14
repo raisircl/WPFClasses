@@ -5,20 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfIntroApp"
         mc:Ignorable="d"
-        Title="ComboBoxWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <ComboBox x:Name="cmbCourses" Width="350" Height="30" Margin="10">
-            <ComboBoxItem Content="C"/>
-        </ComboBox>
-        <TextBox x:Name="txtCourse" Grid.Column="1" Margin="10"></TextBox>
-        <Button x:Name="btnAdd" Grid.Row="1" Grid.Column="1" Margin="20" Height="50" Click="btnAdd_Click">Add Course</Button>
-    </Grid>
+        Title="ComboBoxWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    
+    
+    <TabControl x:Name="tabControl">
+        <TabItem Header="common">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ComboBox x:Name="cmbCourses" Width="350" Height="30" Margin="10">
+                    <ComboBoxItem Content="C"/>
+                </ComboBox>
+                <TextBox x:Name="txtCourse" Grid.Column="1" Margin="10"></TextBox>
+                <Button x:Name="btnAdd" Grid.Row="1" Grid.Column="1" Margin="20" Height="50" Click="btnAdd_Click">Add Course</Button>
+                <ComboBox x:Name="cmbStates" Grid.Row="2" Height="30" DropDownOpened="cmbStates_DropDownOpened">
+                    <ComboBoxItem Content="-Select States--" IsSelected="True"></ComboBoxItem>
+                    <CheckBox Content="Delhi"/>
+                    <CheckBox Content="Haryana"/>
+                    <CheckBox Content="UP"/>
+                    <CheckBox Content="Punjab"/>
+                </ComboBox>
+                <Button x:Name="btnGetStates" Grid.Row="2" Grid.Column="1" Margin="20" Height="50" Click="btnGetStates_Click">Get States</Button>
+                <ListBox x:Name="lblStates" Grid.Row="3" Height="100" />
+                <Image x:Name="imagelogo" Grid.Row="3" Grid.Column="1" Source="/icon.png" Margin="150,0,140,-8"/>
+
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="Tab 2">
+            <Grid Background="#FFE5E5E5">
+                <Image x:Name="image" Height="100" Width="100" Source="/icon.png"/>
+
+            </Grid>
+        </TabItem>
+    </TabControl>
 </Window>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace WpfIntroApp
         {
             InitializeComponent();
         }
-
+        int x = 0;
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             bool x = false;
@@ -53,6 +54,45 @@ namespace WpfIntroApp
             {
                 MessageBox.Show("Unable Empty");
             }
+        }
+
+        private void btnGetStates_Click(object sender, RoutedEventArgs e)
+        {
+            string states="";
+            lblStates.Items.Clear();
+            foreach(var itm in cmbStates.Items)
+            {
+                if (itm.GetType() == typeof(CheckBox))
+                {
+                    CheckBox chk = (CheckBox)itm;
+                    if ((bool)chk.IsChecked)
+                    {
+                        states = states + chk.Content.ToString() + ", ";
+                        lblStates.Items.Add(chk.Content.ToString());
+                    }
+                }
+            }
+
+            cmbStates.Items.Add(states);
+            cmbStates.SelectedIndex = cmbStates.Items.Count - 1;
+
+
+
+
+        }
+
+        private void cmbStates_DropDownOpened(object sender, EventArgs e)
+        {
+            if (cmbStates.Items.Count > x)
+            {
+                cmbStates.SelectedIndex = -1;
+                cmbStates.Items.RemoveAt(cmbStates.Items.Count - 1);
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            x = cmbStates.Items.Count;
         }
     }
 }
