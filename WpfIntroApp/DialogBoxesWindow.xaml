@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfIntroApp.DialogBoxesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfIntroApp"
+        mc:Ignorable="d"
+        Title="DialogBoxesWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="buttonOpen" Content="Open File" Click="btnOpen_Click"/>
+        <Label x:Name="lblfilename" Grid.Row="1"></Label>
+        <Button x:Name="btnSave" Grid.Row="2" Content="Save File" Click="btnSave_Click"/>
+
+        <Button x:Name="btnPrint" Grid.Row="3" Content="Print File" Click="btnPrint_Click"/>
+        <Button x:Name="btnWindow" Grid.Row="4" Content="Print File" Click="btnWindow_Click"/>
+    </Grid>
+</Window>
