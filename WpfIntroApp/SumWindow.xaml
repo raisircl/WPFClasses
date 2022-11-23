@@ -33,6 +33,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto"/>
+
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -53,5 +55,6 @@
         </Border>
         <Label Grid.Row="3">Your Result</Label>
         <Label Grid.Row="3" Grid.Column="1" x:Name="lblResult"></Label>
+        <Button x:Name="btnMargins" Content="Margin" Click="btnMargins_Click" Grid.Column="1" Grid.Row="4"/>
     </Grid>
 </Window>

@@ -56,5 +56,25 @@ namespace WpfIntroApp
                 MessageBox.Show("Numbers can not empty");
             }
         }
+
+        private void btnMargins_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new Margins();
+
+            // Display the dialog box and read the response
+            bool? result = dialog.ShowDialog();
+
+            if (result == true)
+            {
+                // User accepted the dialog box
+                MessageBox.Show("Your request will be processed.");
+            }
+            else
+            {
+                // User cancelled the dialog box
+                MessageBox.Show("Sorry it didn't work out, we'll try again later.");
+            }
+
+        }
     }
 }
