@@ -29,7 +29,13 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Grid.Row="1" x:Name="button" Content="Button" Click="btnadd_click"/>
+        <StackPanel Grid.Row="1">
+            <Button  x:Name="buttonAdd" Content="Add Student" Click="btnadd_click"/>
+            <Button  x:Name="buttonDel" Content="Del Student" Click="btnDel_click"/>
+            <Button  x:Name="buttonUpdate" Content="Update Student" Click="btnUpdate_click"/>
+
+        </StackPanel>
+     
 
     </Grid>
 </Window>

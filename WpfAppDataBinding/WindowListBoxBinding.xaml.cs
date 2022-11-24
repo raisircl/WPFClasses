@@ -47,5 +47,17 @@ namespace WpfAppDataBinding
             studentRepository.Add(student);
             loadStudents();
         }
+
+        private void btnDel_click(object sender, RoutedEventArgs e)
+        {
+            studentRepository.DeleteById(6);
+        }
+
+        private void btnUpdate_click(object sender, RoutedEventArgs e)
+        {
+           
+            Student student = new Student() { RollNo = 7, Name = "Amit Kumar", Percentage = 90 };
+            studentRepository.Update(student);
+        }
     }
 }

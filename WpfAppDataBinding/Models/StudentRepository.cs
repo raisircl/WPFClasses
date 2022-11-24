@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace WpfAppDataBinding.Models
 {
@@ -31,7 +32,11 @@ namespace WpfAppDataBinding.Models
 
         public void DeleteById(int id)
         {
-            throw new NotImplementedException();
+            var student =students.FirstOrDefault(x => x.RollNo == id);
+            if (student != null)
+            {
+                students.Remove(student);
+            }
         }
 
         public ObservableCollection<Student> GetAll()
@@ -41,17 +46,29 @@ namespace WpfAppDataBinding.Models
 
         public Student GetById(int id)
         {
-            throw new NotImplementedException();
+            var student = students.FirstOrDefault(x => x.RollNo == id);
+            return student;
         }
 
         public Student GetByName(string name)
         {
-            throw new NotImplementedException();
+            var student = students.FirstOrDefault(x => x.Name == name);
+            return student;
         }
 
         public void Update(Student student)
         {
-            throw new NotImplementedException();
+           
+            var updatedStudent = students.FirstOrDefault(x => x.RollNo == student.RollNo);
+            if (updatedStudent != null)
+            {
+                int i = students.IndexOf(updatedStudent);
+                if (i >= 0)
+                {
+                    students[i] = student;
+                }
+            }
+           
         }
     }
 }
